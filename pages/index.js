@@ -7,7 +7,6 @@ import '../styles/main.scss'
 
 const Repos = props => (
   <div>
-    {console.log(props)}
     <Head>
       <link rel="icon" type="image/x-icon" class="js-site-favicon" href="https://github.githubassets.com/favicon.ico" />
       <title>Repositories List</title>
@@ -32,7 +31,6 @@ const Repos = props => (
         font-family: 'Open Sans', sans-serif;
       }
     `}</style>
-    
   </div>
 )
 

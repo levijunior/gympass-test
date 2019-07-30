@@ -27,7 +27,6 @@ const RepoList = props => (
         </div>
       </Card>
     )}
-
   </section>
 )
   
