@@ -1,0 +1,29 @@
+.color {
+  &_primary {
+    color: $primary;
+  }
+  &_focus {
+    color: $focus;
+  }
+  &_dark {
+    color: $dark;
+  }
+  &_light {
+    color: $light;
+  }
+}
+
+.bg {
+  &_primary {
+    background-color: $primary;
+  }
+  &_focus {
+    background-color: $focus;
+  }
+  &_dark {
+    background-color: $dark;
+  }
+  &_light {
+    background-color: $light;
+  }
+}
