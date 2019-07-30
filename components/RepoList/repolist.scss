@@ -28,6 +28,12 @@
 
     span {
       margin-right: 16px;
+
+      svg {
+        top: 3px;
+        position: relative;
+        margin-right: 4px;
+      }
     }
   }
 }

@@ -1,5 +1,12 @@
 import React from 'react'
 import Card from '../Card'
+import { setDate, mS } from '../../helpers'
+
+import License from '../../static/license.svg'
+import Forks from '../../static/forks.svg'
+import Star from '../../static/star.svg'
+import Issue from '../../static/issue.svg'
+
 import styles from './repolist.scss'
 
 const RepoList = props => (
@@ -11,11 +18,11 @@ const RepoList = props => (
           <p>{item.description}</p>
           <div className={styles.info}>
             <span>{item.language}</span>
-            <span>{item.license ? item.license.spdx_id : ''}</span>
-            <span>{item.forks_count}</span>
-            <span>{item.stargazers_count}</span>
-            <span>{item.open_issues_count}</span>
-            <span>{item.updated_at}</span>
+            <span><License /> {item.license ? item.license.spdx_id : ''}</span>
+            <span><Forks />{item.forks_count}</span>
+            <span><Star />{item.stargazers_count}</span>
+            <span><Issue />{item.open_issues_count}</span>
+            <span>{`Updated on ${setDate(item.updated_at).day} ${mS(setDate(item.updated_at).month)} ${setDate(item.updated_at).fullYear}`}</span>
           </div>
         </div>
       </Card>
