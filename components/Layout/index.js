@@ -1,7 +1,8 @@
 import Header from '../Header'
+import styles from './layout.scss'
 
 const Layout = props => (
-    <main >
+    <main className={styles.main}>
       <Header />
       {props.children}
     </main>

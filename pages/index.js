@@ -1,16 +1,22 @@
 import React from 'react'
 import Head from 'next/head'
 import Layout from '../components/Layout'
-import '../styles/main.scss';
+import RepoList from '../components/RepoList'
+import fetch from 'isomorphic-unfetch'
+import '../styles/main.scss'
 
-const Repos = () => (
+const Repos = props => (
   <div>
+    {console.log(props)}
     <Head>
-      <title>Repos</title>
+      <link rel="icon" type="image/x-icon" class="js-site-favicon" href="https://github.githubassets.com/favicon.ico" />
+      <title>Repositories List</title>
     </Head>
 
     <Layout>
-      Home
+      <RepoList 
+        repositories={props.data}
+      />
     </Layout>
 
     <style jsx global>{`
@@ -29,5 +35,14 @@ const Repos = () => (
     
   </div>
 )
+
+Repos.getInitialProps = async function() {
+  const res = await fetch('https://api.github.com/orgs/reactjs/repos');
+  const data = await res.json();
+
+  return {
+    data
+  };
+};
 
 export default Repos
