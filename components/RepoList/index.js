@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Card from '../Card'
 import { setDate, mS } from '../../helpers'
 
@@ -7,13 +7,28 @@ import Forks from '../../static/forks.svg'
 import Star from '../../static/star.svg'
 import Issue from '../../static/issue.svg'
 
+import Connect from "../../store/config/connect";
+import { getRepositories } from '../../store/repos'
+
 import styles from './repolist.scss'
 
-const RepoList = props => (
+const handleClick = name => {
+  console.log(name)
+}
+
+const RepoList = props => {
+  const dataRepo = props.repositories
+  useEffect(() => {
+    props.dispatch(getRepositories(dataRepo))
+  }, [])
+  let listRepositories = props.store.filter ? props.store.filter.filterRepos : dataRepo
+
+  return (
   <section className={styles.repolist}>
-    {props.repositories.map( item => 
+    {console.log(props.store.filter)}
+    {listRepositories.map( item => 
       <Card key={item.id}>
-        <div className={styles.item_list}>
+        <div className={styles.item_list} onClick={ () => handleClick(props) }>
           <h3>{item.name}</h3>
           <p>{item.description}</p>
           <div className={styles.info}>
@@ -28,6 +43,6 @@ const RepoList = props => (
       </Card>
     )}
   </section>
-)
+)}
   
-export default RepoList;
+export default Connect()(RepoList);

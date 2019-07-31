@@ -9,10 +9,8 @@ const Connect = mapStateToProps => Component => {
   return props => (
     <Context.Consumer>
       {({ dispatch, store }) => {
-        const storeProps = mapStateToProps
-          ? { ...mapStateToProps(store, props) }
-          : { ...mapStateToPropsMock(store, props) };
-        return <Component {...storeProps} dispatch={dispatch} />;
+        const storeProps = mapStateToProps ? { ...mapStateToProps(store, props) } : { ...mapStateToPropsMock(store, props) }
+        return <Component {...storeProps}  store={store} dispatch={dispatch} />
       }}
     </Context.Consumer>
   );

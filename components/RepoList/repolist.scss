@@ -28,6 +28,9 @@
 
     span {
       margin-right: 16px;
+      white-space: nowrap;
+      display: inline-block;
+      margin-bottom: 3px;
 
       svg {
         top: 3px;

@@ -13,3 +13,13 @@ export const mS = monthNumber => {
   const monthShort = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
   return monthShort[monthNumber]
 }
+
+
+export const filterData = (filterQuery, filterArray) => {
+  if(filterQuery && filterArray) {
+    let filtered = filterArray.filter( item =>
+      JSON.stringify(item).toLowerCase().search( filterQuery.toLowerCase() ) !== -1
+    );
+    return filtered
+  }
+}

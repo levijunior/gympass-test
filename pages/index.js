@@ -14,7 +14,7 @@ const Repos = props => (
 
     <Layout>
       <RepoList 
-        repositories={props.data}
+        {...props}
       />
     </Layout>
 
@@ -36,10 +36,10 @@ const Repos = props => (
 
 Repos.getInitialProps = async function() {
   const res = await fetch('https://api.github.com/orgs/reactjs/repos');
-  const data = await res.json();
+  const repositories = await res.json();
 
   return {
-    data
+    repositories
   };
 };
 

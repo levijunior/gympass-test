@@ -27,7 +27,6 @@ const Store = props => {
     dispatch: middlewareContrutor
   };
 
-  console.log(combinedReducers)
   return (
     <Context.Provider value={combinedReducers}>
       {props.children}

@@ -1,39 +1,18 @@
-export const repoStore = {
-  repositories: {},
+import { filterData } from '../helpers'
+
+export let repoStore = {
+  repositories: [],
   filter: {
-    filterQuery: '',
-    filterRepos: {}
-  }
-};
-  
-
-export const REPOSITORIES = "REPOSITORIES",
-             FILTER = "FILTER"
-
-const repoReducer = (state = repoStore, action) => {
-  switch (action.type) {
-    case REPOSITORIES:
-      return {
-        ...state,
-        repositories: action.repos
-      };
-    case FILTER:
-      return {
-        ...state,
-        filter: {
-          ...state.filter,
-          filterQuery: action.filterQuery
-        }
-      };
-    default:
-      return state;
+    filterQuery: "",
+    filterRepos: []
   }
 };
 
-
-export const getRepositories = () => {
+//actions
+export const getRepositories = repositories => {
   return {
-    type: REPOSITORIES
+    type: REPOSITORIES,
+    repositories
   };
 };
 
@@ -43,6 +22,35 @@ export const filterRepositories = filterQuery => {
     filterQuery
   };
 };
+  
+//reducers
+export const REPOSITORIES = "REPOSITORIES",
+             FILTER = "FILTER"
 
+const repoReducer = (repoStore, action) => {
+  switch (action.type) {
+
+    case REPOSITORIES:
+      repoStore = {
+        repositories: action.repositories,
+        filter: {
+          filterQuery: "",
+          filterRepos: action.repositories
+        }
+      }
+
+      case FILTER:
+      repoStore = {
+        ...repoStore,
+        filter: {
+          filterQuery: action.filterQuery || '',
+          filterRepos: action.filterQuery ? filterData(action.filterQuery, repoStore.repositories) : repoStore.repositories
+        }
+      }
+      console.log(repoStore.repositories)
+    default:
+      return repoStore;
+  }
+};
 
 export default repoReducer;

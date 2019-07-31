@@ -1,6 +1,7 @@
 import Header from '../Header'
 import styles from './layout.scss'
 import Provider from "../../store/config/provider";
+import Connect from "../../store/config/connect";
 
 const Layout = props => (
   <Provider>
@@ -11,4 +12,4 @@ const Layout = props => (
   </Provider>
   );
   
-export default Layout;
+export default Connect()(Layout);
