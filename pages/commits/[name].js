@@ -17,6 +17,7 @@ const Commits = props => {
 			</Head>
 
 			<Layout>
+				breadcrumb
 				<CommitsList
 					{...props}
 				/>
