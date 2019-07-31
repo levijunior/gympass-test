@@ -25,10 +25,9 @@ const RepoList = props => {
 
   return (
   <section className={styles.repolist}>
-    {console.log(props.store.filter)}
     {listRepositories.map( item => 
       <Card key={item.id}>
-        <div className={styles.item_list} onClick={ () => handleClick(props) }>
+        <div className={styles.item_list} onClick={ () => handleClick(item.name) }>
           <h3>{item.name}</h3>
           <p>{item.description}</p>
           <div className={styles.info}>

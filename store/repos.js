@@ -47,7 +47,6 @@ const repoReducer = (repoStore, action) => {
           filterRepos: action.filterQuery ? filterData(action.filterQuery, repoStore.repositories) : repoStore.repositories
         }
       }
-      console.log(repoStore.repositories)
     default:
       return repoStore;
   }
