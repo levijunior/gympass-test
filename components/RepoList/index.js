@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import Card from '../Card'
 import { setDate, mS } from '../../helpers'
-import Link from 'next/link';
+import Link from 'next/link'
 
 import License from '../../static/license.svg'
 import Forks from '../../static/forks.svg'
 import Star from '../../static/star.svg'
 import Issue from '../../static/issue.svg'
 
-import Connect from "../../store/config/connect";
+import Connect from "../../store/config/connect"
 import { getRepositories } from '../../store/repos'
 
 import styles from './repolist.scss'

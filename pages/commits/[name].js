@@ -1,10 +1,9 @@
 import React from 'react'
-import { useRouter } from 'next/router';
 import Head from 'next/head'
 import Layout from '../../components/Layout'
 import fetch from 'isomorphic-unfetch'
+import CommitsList from '../../components/CommitsList'
 import '../../styles/main.scss'
-
 
 
 const Commits = props => {
@@ -14,17 +13,13 @@ const Commits = props => {
 		<div>
 			<Head>
 				<link rel="icon" type="image/x-icon" class="js-site-favicon" href="https://github.githubassets.com/favicon.ico" />
-				<title>/{props.name} Commits List</title>
+				<title>Commits from /{props.name}</title>
 			</Head>
 
 			<Layout>
-				<ol>
-					{commits.map( item => (
-						<li key={item.sha}>
-							{item.commit.message}
-						</li>
-					))}
-				</ol>
+				<CommitsList
+					{...props}
+				/>
 			</Layout>
 		</div>
 	)
