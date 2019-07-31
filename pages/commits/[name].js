@@ -8,7 +8,8 @@ import '../../styles/main.scss'
 
 
 const Commits = props => {
-	console.log(props)
+	const limit = 20
+	const commits = props.commits.slice(0, limit)
 	return (
 		<div>
 			<Head>
@@ -18,7 +19,7 @@ const Commits = props => {
 
 			<Layout>
 				<ol>
-					{props.commits.map( item => (
+					{commits.map( item => (
 						<li key={item.sha}>
 							{item.commit.message}
 						</li>
