@@ -1,3 +1,5 @@
+#### :tw-26a0: Project paused duo the API rate limit exceeded
+
 # Front-end test assignment - GYMPASS
 Repository created to host the files for the front-end test https://github.com/Gympass/front-end-coding-test
 
@@ -36,7 +38,7 @@ Populate `./pages/index.js` inside your project:
 	}
 
 	export default Home
-and then just run `npm run dev` and go to` http://localhost:3000`. To use another port, you can `run npm run dev -- -p <your port here>`.
+and then just run `npm run dev` and go to `http://localhost:3000`. To use another port, you can `run npm run dev -- -p <your port here>`.
 
 So far, we get:
 
