@@ -1,5 +1,9 @@
 export const commitStore = {
   commits: {},
+  filter: {
+    filterQuery: "",
+    filterCommits: []
+  }
 };
   
 export const COMMITS = "COMMITS";

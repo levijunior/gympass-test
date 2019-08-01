@@ -1,10 +1,40 @@
 .commitsList {
   list-style: none;
   padding: 30px;
-  margin: 0;
+  margin: 0 auto;
+  max-width: 1300px;
   
   li {
+    position: relative;
     margin-bottom: 15px;
     padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .container_left {
+      position: relative;
+      width: calc(100% - 160px);
+    }
+
+    .p {
+      
+      &_big {
+        margin: 0;
+        margin-bottom: 5px;
+        font-size: 14px;
+        line-height: 16px;
+        font-weight: 600;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      &_small {
+        margin: 0;
+        margin-top: 5px;
+        font-size: 12px;
+        line-height: 14px;
+      }
+    }
   }
 }
