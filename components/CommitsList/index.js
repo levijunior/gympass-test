@@ -5,7 +5,7 @@ import Connect from "../../store/config/connect"
 import styles from './commit-list.scss'
 
 const CommitsList = props => {
-  console.log(props)
+  // console.log(props)
   return (
     <ul className={styles.commitsList}>
       {props.commits.map( item => (

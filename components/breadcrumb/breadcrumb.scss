@@ -1,0 +1,15 @@
+@import '../../styles/vars';
+
+.breadcrumb {
+  padding: 15px 30px;
+  padding-bottom: 0;
+  margin: 0;
+  text-transform: uppercase;
+  color: $dark;
+
+  a {
+    color: $primary;
+    font-weight: 600;
+    text-decoration: none;
+  }
+}

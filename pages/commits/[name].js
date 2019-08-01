@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Layout from '../../components/Layout'
 import fetch from 'isomorphic-unfetch'
 import CommitsList from '../../components/CommitsList'
+import Breadcrumb from '../../components/breadcrumb'
 import '../../styles/main.scss'
 
 
@@ -17,7 +18,9 @@ const Commits = props => {
 			</Head>
 
 			<Layout>
-				breadcrumb
+				<Breadcrumb 
+					name={props.name}
+				/>
 				<CommitsList
 					{...props}
 				/>
