@@ -16,11 +16,11 @@ and more to come
 
 ## How to use
 
-	`git clone https://github.com/levijunior/gympass-test.git`
+`git clone https://github.com/levijunior/gympass-test.git`
 
-	`npm install`
+`npm install`
 
-	`npm run dev`
+`npm run dev`
 
 #### nextjs helper
 Install it:
