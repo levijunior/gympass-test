@@ -15,7 +15,12 @@ and more to come
 
 
 ## How to use
-#### Setup
+
+`git clone https://github.com/levijunior/gympass-test.git`
+`npm install`
+`npm run dev`
+
+#### nextjs helper
 Install it:
 
 `npm install --save next react react-dom`
