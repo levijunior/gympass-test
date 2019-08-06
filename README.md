@@ -1,5 +1,3 @@
-#### :construction: :construction: Project paused duo the API rate limit exceeded
-
 # Front-end test assignment - GYMPASS
 Repository created to host the files for the front-end test https://github.com/Gympass/front-end-coding-test
 
